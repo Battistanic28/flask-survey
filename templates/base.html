@@ -6,11 +6,10 @@
     <title>Customer Survey</title>
 </head>
 <body>
-    <h1>{{title}}</h1>
-    <p>{{instructions}}</p>
-    <form action="/questions/0 ">
-        <button>Start Survey</button>
-    </form>
-    
-</body>
+    {% for msg in get_flashed_messages() %}
+      <p>{{ msg }}</p>
+    {% endfor %}
+    {% block content %}
+    {% endblock %}
+  </body>
 </html>
